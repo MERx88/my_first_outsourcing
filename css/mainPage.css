@@ -61,9 +61,6 @@ main{
     margin-left: 7%;
 }
 
-
-
-
 #myIdSection{
     margin-left: 15px;
     font-size: 25px;
@@ -138,6 +135,14 @@ main{
     border: none;
     cursor:pointer;
 }
+
+#sidebarList > ul > li:hover{
+    background-color: #293E98;
+}
+
+/* #sidebarList > ul > li:hover{
+    background-color: #293E98;
+} */
 
 /* ==========Month============ */
 
@@ -336,11 +341,7 @@ main{
     cursor:pointer;
 }
 
-#updateBtn1{
-    background-color: #4668ff;
-}
-
-#updateBtn2{
+#updateBtn{
     background-color: #4668ff;
 }
 

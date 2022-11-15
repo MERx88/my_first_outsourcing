@@ -4,15 +4,10 @@ function show_sidebar(){
     sidebar.style.backgroundColor="#D1DEF2"  
 }
 
-function hide_sidebar(){
-    sidebarList.style.display="none"
-    sidebar.style.backgroundColor="#F3F6FB"  
-}
-
 function show_day_schedule(){
     dayScheduleSection.style.display="flex"
     dayNumId.style.backgroundColor="#D1DEF2"
-    dayDetailId1.style.backgroundColor="#D1DEF2"
+    dayDetailId.style.backgroundColor="#D1DEF2"
 }
 
 function new_form_btn(){

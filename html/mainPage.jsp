@@ -51,7 +51,7 @@
                         <td id="dayNumId" class="dayNum">
                             1
                         </td>
-                        <td id="dayDetailId1" class="dayDetail">
+                        <td id="dayDetailId" class="dayDetail">
                             <div id="scheduleDetail1" class="detail">
                                 15:00 front end 개발
                             </div>
@@ -86,7 +86,7 @@
                             front end 개발
                         </td>
                         <td id="switchBtnSection">
-                            <button id="updateBtn1" class="switchBtn" onclick="update_form_btn()">
+                            <button id="updateBtn" class="switchBtn" onclick="update_form_btn()">
                                 <img src="../image/update.png" class="switchBtnImg">
                             </button>
                             <button id="deleteBtn" class="switchBtn" onclick="delete_btn()">
@@ -94,21 +94,6 @@
                             </button>
                         </td>
                     </tr>
-                    <tr id="dayScheduleRow">
-                        <td id="dayScheduleDetail" class="dayScheduleText">
-                            15:00 <br>
-                            front end 개발
-                        </td>
-                        <td id="switchBtnSection">
-                            <button id="updateBtn2" class="switchBtn" onclick="update_form_btn()">
-                                <img src="../image/update.png" class="switchBtnImg">
-                            </button>
-                            <button id="deleteBtn" class="switchBtn" onclick="delete_btn()">
-                                <img src="../image/delete.png" class="switchBtnImg">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
                         <td>
                             <button id="newBtn" onclick="new_form_btn()">+</button>
                         </td>
