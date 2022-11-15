@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F3F6FB;
+}
+
+input::placeholder{
+    color: #F2F2F3;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+main{
+    width:100%;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title{
+    height: 30px;
+    color:#293E98;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+#findIdForm{
+    width: 600px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.insert{
+    width: 65%;
+    height: 25%;
+    margin-top: 13px;
+    padding-left: 5%;
+    padding-top: 5px;
+    border-radius: 25px;
+    outline:none;
+    border: none;
+}
+
+#btnSection{
+    width:65%;
+    height: 28%;
+    margin-top: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.backBtn{
+    width: 35%;
+    height: 100%;
+    background-color: #D3D3D3;
+    margin-top: 15px;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    outline:none;
+    border: none;
+    cursor:pointer;
+}
+
+.formBtn{
+    width: 65%;
+    height: 100%;
+    background-color: #293E98;
+    margin-top: 15px;
+    margin-left: 2%;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    outline:none;
+    border: none;
+    cursor:pointer;
+}
+
+@media (max-width: 550px){
+    main{
+        margin-top: 220px;
+    }
+
+    #title{
+        height: 30px;
+        font-size: 40px;
+    }
+
+    #findIdForm{
+        width: 450px;
+        height: 200px;
+    }
+
+    .insert{
+        height: 20%;
+    }
+
+    #btnSection{
+        height: 23%;
+    }
+}

@@ -1,0 +1,527 @@
+body {
+    width:100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F3F6FB;
+}
+
+::-webkit-scrollbar{
+    width: 6px;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #A3A3A3;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #D3D3D3;
+}
+
+main{
+    width:100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s;
+}
+
+/* ==========Side bar============ */
+
+#headMenuSection{
+    width: 15%;
+    height:90px;
+    margin-left: 30px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+}
+
+#menuBtnImg{
+    height: 50px;
+    cursor:pointer;
+}
+
+#sideMenu{
+    display: none;
+}
+
+#sideMenu:checked+section{
+    left:0;
+}
+
+
+#sideMenu:checked~main{
+    margin-left: 7%;
+}
+
+
+
+
+#myIdSection{
+    margin-left: 15px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #A3A3A3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#idText{
+    margin-left: 15px;
+    color:#293E98;
+}
+
+#sidebarList{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    background-color:#D1DEF2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:0;
+    left: -15%;
+    z-index: 1;
+    transition: all .35s;
+}
+
+#myScheduleBtn{
+    width: 80%;
+    height: 50px;
+    margin-top: 100px;
+    background-color: #293E98;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline:none;
+    border: none;
+    cursor:pointer;
+}
+
+#departmentList{
+    width: 100%;
+    padding:0px;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.department{
+    width: 90%;
+    height: 50px;
+    margin-top: 8%;
+    background-color: #3A5CAA;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline:none;
+    border: none;
+    cursor:pointer;
+}
+
+/* ==========Month============ */
+
+#monthScheduleSection{
+    width: 350px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title{
+    width:200px;
+    height: 20px;
+    font-size: 35px;
+    font-weight: 700;
+    color:#293E98;
+}
+
+#monthSchedule{
+    width: 270px;
+    height: 600px;
+    padding-top:20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    outline:none;
+    border: none;
+}
+
+#month{
+    height: 40px;
+    font-size: 45px;
+}
+
+#monthScheduleList{
+    width: 280px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    border-spacing: 5px;
+}
+
+#monthScheduleRow{
+    width: 100px;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+
+.dayNum{
+    width: 70px;
+    height: 50px;
+    padding-top: 3px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFFFFF;
+    border-radius: 20px;
+    outline:none;
+    background-color: #D3D3D3;
+    text-align: center;
+
+}
+
+.dayDetail{
+    width:200px;
+    height: 50px;
+    background-color: #D3D3D3;
+    border-radius: 35px;
+    outline:none;
+}
+
+.detail{
+    width:170px;
+    height: 15px;
+    margin-top: 3px;
+    margin-left: 15px;
+    margin-bottom: 3px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
+
+#pageBtnSection{
+    width: 160px;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pageBtn{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline:none;
+    border: none;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 7px #000;
+}
+
+.pageBtnImg{
+    width: 50px;
+    opacity: 30%;
+}
+
+
+/* ===========Day============ */
+
+#dayScheduleSection{
+    display: none;
+    flex-direction: column;
+}
+
+#daySchedule{
+    width:400px;
+    height: 620px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 35px;
+    background-color: #D1DEF2;
+}
+
+#day{
+    height: 20px;
+    font-size: 25px;
+    color:#686868;
+}
+
+#dayScheduleList{
+    width: 400px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+#dayScheduleRow{
+    width: 380px;
+    height: 100px;
+    margin-top: 10px;
+    /* background-color: rgb(94, 225, 136); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#dayScheduleDetail{
+    width: 80%;
+    height: 70px;
+    padding-left: 20px;
+    padding-top: 30px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+}
+
+#switchBtnSection{
+    width: 15%;
+    height: 100px;
+    /* background-color: purple; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.switchBtn{
+    margin:3px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    outline:none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+
+#updateBtn1{
+    background-color: #4668ff;
+}
+
+#updateBtn2{
+    background-color: #4668ff;
+}
+
+#deleteBtn{
+    background-color: rgb(243, 93, 93);
+}
+
+.switchBtnImg{
+    width: 25px;
+    opacity: 30%;
+}
+
+#newBtn{
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 85px;
+    background-color: #293E98;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    outline:none;
+    border: none;
+    cursor:pointer;
+}
+
+/* ==========New schedule========== */
+
+#newScheduleSection{
+    display: none;
+    flex-direction: column;
+}
+
+#newSchedule{
+    width:400px;
+    height: 620px;
+    margin-top: 65px;
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 35px;
+    background-color: #D3D3D3;
+}
+
+#new{
+    height: 20px;
+    font-size: 25px;
+    color:#686868;
+}
+
+#newScheduleForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insert{
+    width: 388px;
+    height: 40px;
+    margin-top: 13px;
+    padding-left: 5%;
+    padding-top: 5px;
+    border-radius: 25px;
+    font-size: 20px;
+    color:#D3D3D3;
+    outline:none;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#newContentInsert{
+    width: 400px;
+    height: 350px;
+    margin-top: 20px;
+    border-radius: 25px;
+    outline:none;
+    border: none;
+}
+
+.backBtnImg{
+    width:30px;
+}
+
+.formBtn{
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #293E98;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    outline:none;
+    border: none;
+    cursor:pointer;
+}
+
+.backBtn{
+    width:130px;
+    height: 55px;
+    margin-top: 5px;
+    margin-left: 20px;
+    border-radius: 20px;
+    outline:none;
+    border: none;
+    box-shadow: 0px 0px 7px #000;
+    cursor:pointer;
+}
+
+/* ==========Update schedule========== */
+
+#updateScheduleSection{
+    display: none;
+    flex-direction: column;
+}
+
+#updateSchedule{
+    width:400px;
+    height: 620px;
+    margin-top: 65px;
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 35px;
+    background-color: #D3D3D3;
+}
+
+#update{
+    height: 20px;
+    font-size: 25px;
+    color:#686868;
+}
+
+#updateScheduleForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insert{
+    width: 388px;
+    height: 40px;
+    margin-top: 13px;
+    padding-left: 5%;
+    padding-top: 5px;
+    border-radius: 25px;
+    font-size: 20px;
+    color:#D3D3D3;
+    outline:none;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#updateContentInsert{
+    width: 400px;
+    height: 350px;
+    margin-top: 20px;
+    border-radius: 25px;
+    outline:none;
+    border: none;
+}
+
+@media (max-width: 1530px){
+    #sidebarList{
+        width: 250px;
+    }
+
+    #sidebarList{
+
+        left: -250px;
+
+    }
+}
