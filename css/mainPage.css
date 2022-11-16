@@ -6,6 +6,12 @@ body {
     background-color: #F3F6FB;
 }
 
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+
 ::-webkit-scrollbar{
     width: 6px;
     border-radius: 50%;
@@ -103,42 +109,65 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    outline:none;
-    border: none;
     cursor:pointer;
 }
 
 #departmentList{
     width: 100%;
-    padding:0px;
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     align-items: center;
-    list-style: none;
 }
 
 .department{
     width: 90%;
-    height: 50px;
-    margin-top: 8%;
-    background-color: #3A5CAA;
-    color:#FFFFFF;
     font-size: 23px;
     font-weight: 500;
+    cursor:pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebarList p > li:hover{
+    background-color: #293E98;
+}
+
+#sidebarList ul ul{
+    width:90%;
+    display: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #000;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#sidebarList ul ul li{
+    padding: 2%;
+}
+
+#sidebarList ul > li:hover > ul {
+    display: flex;
+}
+
+#sidebarList p{
+    width: 90%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #3A5CAA;
+    color:#FFFFFF;
     border-radius: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    outline:none;
-    border: none;
-    cursor:pointer;
 }
 
-#sidebarList > ul > li:hover{
-    background-color: #293E98;
-}
+
 
 /* #sidebarList > ul > li:hover{
     background-color: #293E98;

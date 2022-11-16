@@ -27,12 +27,32 @@
     <input id="sideMenu" type="checkbox">
     <section id="sidebarList">
         <p id="myScheduleBtn">My Schedule</p>
-        <ul id="departmentList">DEPARTMENT
+        <ul id="departmentList">DEPARTMENT -----------
         <li class="department">
-            Front End
+            <p>
+                Front End
+            </p>
+            <ul>
+                <li>
+                    ID #5555
+                </li>
+                <li>
+                    ID #6666
+                </li>
+            </ul>
         </li>
         <li class="department">
-            Back End
+            <p>
+                Back End
+            </p>
+            <ul>
+                <li>
+                    ID #5555
+                </li>
+                <li>
+                    ID #6666
+                </li>
+            </ul>
         </li>
         </ul>
     </section>
