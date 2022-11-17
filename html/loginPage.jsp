@@ -21,9 +21,9 @@
                 <input type="submit" id="loginBtn" class="formBtn" value="LOGIN">
             </form>
             <section id="extraLinkContainer">
-                <a href="findIdForm.jsp" id="findIdLink" class="extraLink">아이디 찾기</a>
-                <a href="findPasswordForm.jsp" id="findPasswordLink" class="extraLink">비밀번호 찾기</a>
-                <a href="signupForm.jsp" id="signupLink" class="extraLink">회원가입</a>
+                <a href="findIdPage.jsp" id="findIdLink" class="extraLink">아이디 찾기</a>
+                <a href="findPasswordPage.jsp" id="findPasswordLink" class="extraLink">비밀번호 찾기</a>
+                <a href="signupPage.jsp" id="signupLink" class="extraLink">회원가입</a>
             </section>
         </div>
     </main>

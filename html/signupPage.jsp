@@ -14,16 +14,23 @@
 <body>
     <main>
         <h1 id="title">SIGN UP</h1>
-        <form action="" onsubmit="return signupCheck()" id="signupForm">
+        <form action="" onsubmit="return signup_check()" id="signupForm">
             <section id="idSection">
                 <input type="text" id="idInsert" name="idValue" placeholder="ID">
-                <input type="button" id="idCheckBtn" onclick="idCheck()" value="아이디중복">
+                <input type="button" id="idCheckBtn" onclick="id_check()" value="아이디중복">
                 <input type="hidden" id="idCheckHidden" name="idCheckHiddenValue" value="0">
             </section>
             
-            <input type="password" id="pwInsert" name="pwValue" class="insert" placeholder="PASSWORD">
-            <input type="password" id="pwCheckInsert" name="pwCheckValue" class="insert" placeholder="PASSWORD CHECK">
-
+            <section id="pwSection" class="passwordSection">
+                <input type="password" id="pwInsert" name="pwValue" class="passwordInsert" placeholder="PASSWORD">
+                <i class="pwViewkBtn" onclick="pw_view_check(0)"><img src="../image/view.png" class="viewImg"></i>
+            </section>
+            
+            <section id="pwCheckSection" class="passwordSection">
+                <input type="password" id="pwCheckInsert" name="pwCheckValue" class="passwordInsert" placeholder="PASSWORD CHECK">
+                <i class="pwViewkBtn" onclick="pw_view_check(1)"><img src="../image/view.png" class="viewImg"></i>
+            </section>
+            
             <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME">
             <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P">
 

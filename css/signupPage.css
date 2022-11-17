@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -64,6 +65,37 @@ main{
     border-radius: 10px;
     outline:none;
     border: none;
+    cursor:pointer;
+}
+
+.passwordSection{
+    width: 71%;
+    height: 20%;
+    margin-top: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.passwordInsert{
+    width: 93%;
+    height: 94%;
+    padding-left: 5%;
+    padding-top: 5px;
+    border-radius: 25px;
+    outline:none;
+    border: none;
+}
+
+.viewImg{
+    width: 35px;
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    top:12px;
+    opacity: 10%;
     cursor:pointer;
 }
 
