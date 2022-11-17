@@ -47,16 +47,6 @@ function signup_check(){
 function id_check(){
     window.open("../action/idCheckAction.jsp", "idCheck", "width=200px, height=200px")
 
-    // if(){
-    //     idCheckHiddenValue=document.getElementById("idCheckHidden").value
-
-    //     if(idCheckHiddenValue==0){
-    //         idCheckBtn.style.backgroundColor="#f35e5e"
-    //     }else{
-    //         idCheckBtn.style.backgroundColor="#38B774"
-    //     }
-    // }
-    
 }
 
 function pw_view_check(i){

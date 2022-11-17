@@ -15,11 +15,11 @@
     <main>
         <h1 id="title">FIND ID</h1>
 
-        <form action="" id="findIdForm" onsubmit="return findIdCheck()">
+        <form action="../action/findIdPage.jsp" id="findIdForm" onsubmit="return find_id_check()">
             <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME">
             <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P">
             <section id="btnSection">
-                <input type="button" id="backLoginFormBtn" class="backBtn" value="<Login" onclick="goLogin()">
+                <input type="button" id="backLoginFormBtn" class="backBtn" value="<Login" onclick="go_login()">
                 <input type="submit" id="findIdBtn" class="formBtn" value="FIND ID">
             </section>
         </form>

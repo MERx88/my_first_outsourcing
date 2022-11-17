@@ -17,6 +17,11 @@
 
 <%  
     request.setCharacterEncoding("utf-8");
+    char quotes = '"';
+
+    String nameValue = quotes+request.getParameter("nameValue")+quotes;
+    String contactValue = quotes+request.getParameter("contactValue")+quotes;
+
     //데이터베이스 연결
     Class.forName("com.mysql.jdbc.Driver");
     Connection connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/web","start","1234");
@@ -26,7 +31,7 @@
     //sql문 전송
     ResultSet result = query.executeQuery();
 
-    char quotes = '"';
+   
     ArrayList<ArrayList<String>> memberList = new ArrayList<ArrayList<String>>();
     while(result.next()){
         ArrayList<String> member = new ArrayList();
@@ -50,31 +55,24 @@
 
 <body>
     <script type="text/javascript">
+        var nameValue=<%=nameValue%>;
+        var contactValue=<%=contactValue%>;
         var memberListSize=<%=memberList.size()%>;
         var memberList = <%=memberList%>;
-        var idValue=opener.document.getElementById("idInsert").value
         var j
-        
+
         for(var i=0; i<memberListSize; i++){
-            if(idValue==memberList[i][1]){
+            if(nameValue==memberList[i][3] && contactValue==memberList[i][4]){
+                alert(memberList[i][3]+"님의 아이디는 "+memberList[i][1]+"입니다")
                 j=1
-                alert("아이디 중복")
+                location.href="../html/loginPage.jsp"
             }
         }
 
         if(j==null){
-            alert("사용 가능한 아이디");
-            opener.document.getElementById("idCheckHidden").value=1
-            opener.document.getElementById("idCheckBtn").style.backgroundColor="#38B774"
-            opener.document.getElementById("idCheckBtn").value="아이디 사용가능"
-            this.close()
+                alert("아이디를 찾을 수 없습니다")
+                history.back()
         }
-        else
-        {
-            opener.document.getElementById("idCheckHidden").value=0
-            opener.document.getElementById("idCheckBtn").style.backgroundColor="#f35e5e"
-            opener.document.getElementById("idCheckBtn").value="아이디중복"
-            this.close()
-        }
+
     </script>
 </body>

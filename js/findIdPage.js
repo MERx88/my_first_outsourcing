@@ -1,9 +1,9 @@
 
+function find_id_check(){
 
-var nameValue=document.getElementById("nameInsert").value
-var contactValue=document.getElementById("contactInsert").value
+    var nameValue=document.getElementById("nameInsert").value
+    var contactValue=document.getElementById("contactInsert").value
 
-function findIdCheck(){
     if(nameValue==""){
         alert("이름를 입력해주세요")
         return false;
@@ -14,6 +14,6 @@ function findIdCheck(){
     }
 }
 
-function goLogin(){
+function go_login(){
     location.href = "../html/loginPage.jsp"
 }
