@@ -14,7 +14,7 @@
 <body>
     <main>
         <h1 id="title">SIGN UP</h1>
-        <form action="" onsubmit="return signup_check()" id="signupForm">
+        <form action="../action/signupAction.jsp" onsubmit="return signup_check()" id="signupForm">
             <section id="idSection">
                 <input type="text" id="idInsert" name="idValue" placeholder="ID">
                 <input type="button" id="idCheckBtn" onclick="id_check()" value="아이디중복">
@@ -35,7 +35,7 @@
             <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P">
 
             <select id="departmentInsert" name="departmentValue">
-                <option disabled selected>DEPARTMENT</option>
+                <option disabled selected value="">DEPARTMENT</option>
                 <option value="frontEndValue">FrontEnd</option>
                 <option value="backEndValue">BackEnd</option>
             </select>

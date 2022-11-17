@@ -1,18 +1,20 @@
 
 
-var idValue= document.getElementById("idInsert").value
-var idCheckValue=document.getElementById("idCheckBtn").value
-var pwValue=document.getElementById("pwInsert").value
-var pwCheckValue=document.getElementById("pwCheckInsert").value
-var nameValue=document.getElementById("nameInsert").value
-var contactValue=document.getElementById("contactInsert").value
-
 function signup_check(){
+
+    var idValue= document.getElementById("idInsert").value
+    var idCheckValue=document.getElementById("idCheckHidden").value
+    var pwValue=document.getElementById("pwInsert").value
+    var pwCheckValue=document.getElementById("pwCheckInsert").value
+    var nameValue=document.getElementById("nameInsert").value
+    var contactValue=document.getElementById("contactInsert").value
+    var departmentValue=document.getElementById("departmentInsert").value
+
     if(idValue==""){
         alert("ID를 입력해주세요")
         return false;
     }
-    if(checkidValue==0){
+    if(idCheckValue==0){
         alert("아이디중복체크를 해주세요")
         return false;
     }
@@ -24,6 +26,10 @@ function signup_check(){
         alert("P.W CHECK를 입력해주세요")
         return false;
     }
+    if(pwValue!=pwCheckValue){
+        alert("P.W CHECK를 확인해주세요")
+        return false;
+    }
     if(nameValue==""){
         alert("이름를 입력해주세요")
         return false;
@@ -32,10 +38,25 @@ function signup_check(){
         alert("연락처를 입력해주세요")
         return false;
     }
+    if(departmentValue==""){
+        alert("부서를 선택해주세요")
+        return false;
+    }
 }
 
 function id_check(){
     window.open("../action/idCheckAction.jsp", "idCheck", "width=200px, height=200px")
+
+    // if(){
+    //     idCheckHiddenValue=document.getElementById("idCheckHidden").value
+
+    //     if(idCheckHiddenValue==0){
+    //         idCheckBtn.style.backgroundColor="#f35e5e"
+    //     }else{
+    //         idCheckBtn.style.backgroundColor="#38B774"
+    //     }
+    // }
+    
 }
 
 function pw_view_check(i){
