@@ -1,5 +1,9 @@
 
 
+// var idSession=<%=session.getAttribute("idSession")%>;
+// var idText=document.getElementById("idText")
+// idText.innerHTML=idSession
+
 var monthsText=["January","February","March","April","May","June","July","August","September","October","November","December"]
 var date = new Date()
 var daysNow = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()

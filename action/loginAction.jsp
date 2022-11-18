@@ -19,32 +19,30 @@
     request.setCharacterEncoding("utf-8");
     char quotes = '"';
 
-    String idValue = quotes+request.getParameter("idValue")+quotes;
-    String nameValue = quotes+request.getParameter("nameValue")+quotes;
-    String contactValue = quotes+request.getParameter("contactValue")+quotes;
+    String idValue = request.getParameter("idValue");
+    String pwValue = request.getParameter("pwValue");
+    int i=0;
    
     //데이터베이스 연결
     Class.forName("com.mysql.jdbc.Driver");
     Connection connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/web","start","1234");
-    //sql문 준비
-    String sql ="SELECT * FROM member;";
+
+    String sql ="SELECT * FROM member WHERE id=? && password=?;";
+    
     PreparedStatement query = connect.prepareStatement(sql);
-    //sql문 전송
+    query.setString(1, idValue);
+    query.setString(2, pwValue);
+
     ResultSet result = query.executeQuery();
 
-   
-    ArrayList<ArrayList<String>> memberList = new ArrayList<ArrayList<String>>();
-    while(result.next()){
-        ArrayList<String> member = new ArrayList();
-            member.add(quotes+result.getString(1)+quotes);
-            member.add(quotes+result.getString(2)+quotes);
-            member.add(quotes+result.getString(3)+quotes);
-            member.add(quotes+result.getString(4)+quotes);
-            member.add(quotes+result.getString(5)+quotes);
-            member.add(quotes+result.getString(6)+quotes);
-            member.add(quotes+result.getString(7)+quotes);
-            memberList.add(member);
+    if(result.next()){
+        i=1;
+        session.setAttribute("idSession", idValue); 
+		response.sendRedirect("../html/mainPage.jsp"); 
+    }else{
+        i=0;
     }
+
 %>
 
 <head>
@@ -56,24 +54,15 @@
 
 <body>
     <script type="text/javascript">
-        var idValue=<%=idValue%>;
-        var nameValue=<%=nameValue%>;
-        var contactValue=<%=contactValue%>;
-        var memberListSize=<%=memberList.size()%>;
-        var memberList = <%=memberList%>;
-        var j
-
-        for(var i=0; i<memberListSize; i++){
-            if(idValue==memberList[i][1] && nameValue==memberList[i][3] && contactValue==memberList[i][4]){
-                alert(memberList[i][3]+"님의 비밀번호는 "+memberList[i][2]+"입니다")
-                j=1
-                location.href="../html/loginPage.jsp"
-            }
+        var i= <%=i%>;
+        
+        if(i==0){
+            alert("로그인 정보를 다시 확인해주세요")
+            location.href="../html/loginPage.jsp "
         }
-
-        if(j==null){
-                alert("비밀번호를 찾을 수 없습니다")
-                history.back()
+        else{
+            console.log(i)
+            location.href="../html/mainPage.jsp "
         }
 
     </script>

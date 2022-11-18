@@ -20,13 +20,13 @@
         </label>
         <div id="myIdSection">
             <p>#ID</p>
-            <p id="idText" >7791</p>
+            <p id="idText" ><%=session.getAttribute("idSession")%></p>
         </div>
     </section>  
     
     <input id="sideMenu" type="checkbox">
     <section id="sidebarList">
-        <p id="myScheduleBtn">My Schedule</p>
+        <button id="myScheduleBtn">My Schedule</button>
         <ul id="departmentList">DEPARTMENT -----------
         <li class="department">
             <p>
@@ -55,6 +55,7 @@
             </ul>
         </li>
         </ul>
+        <button id="logoutBtn">LOGOUT</button>
     </section>
 
     <main>

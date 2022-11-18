@@ -110,6 +110,7 @@ main{
     align-items: center;
     justify-content: center;
     cursor:pointer;
+    border: none;
 }
 
 #departmentList{
@@ -165,6 +166,22 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#logoutBtn{
+    width: 80%;
+    height: 50px;
+    margin-top: 450px;
+    background-color: #686868;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    border: none;
 }
 
 

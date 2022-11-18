@@ -15,7 +15,7 @@
         <img src="../image/stageus_logo_white.png" id="stageusLogoImg">
         <h1 id="title">LOG IN</h1>
         <div id="loginContainer">
-            <form action="" id="loginForm" onsubmit="return loginCheck()">
+            <form action="../action/loginAction.jsp" id="loginForm" onsubmit="return login_check()">
                 <input type="text" id="idInsert" name="idValue" class="insert" placeholder="ID">
                 <input type="password" id="pwInsert" name="pwValue" class="insert" placeholder="PASSWORD">
                 <input type="submit" id="loginBtn" class="formBtn" value="LOGIN">
