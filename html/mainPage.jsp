@@ -64,23 +64,9 @@
         <section id="monthScheduleSection">
             <h1 id="title">My Schedule</h1>
             <div id="monthSchedule">
-                <h2 id="month">JUNE</h2>
+                <h2 id="month"><!-- 동적생성 --></h2>
                 <table id="monthScheduleList">
-                    <!-- 예시입니다 -->
-                    <tr id="monthScheduleRow" onclick="show_day_schedule()">
-                        <td id="dayNumId" class="dayNum">
-                            1
-                        </td>
-                        <td id="dayDetailId" class="dayDetail">
-                            <div id="scheduleDetail1" class="detail">
-                                15:00 front end 개발
-                            </div>
-                            <div id="scheduleDetail2" class="detail">
-                                17:00 back end 개발
-                            </div>
-                        </td>
-                    </tr>
-                     <!-- 예시입니다 -->
+                    <!-- 동적생성 -->
                 </table>
             </div>
             <div id="pageBtnSection">

@@ -219,7 +219,7 @@ main{
     border-spacing: 5px;
 }
 
-#monthScheduleRow{
+#monthScheduleRowClass{
     width: 100px;
     height: 40px;
     flex-direction: row;
