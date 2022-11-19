@@ -165,6 +165,10 @@ function show_day_schedule(){
     dayDetailId.style.backgroundColor="#D1DEF2"
 }
 
+function logout_btn(){
+    location.href='../action/logoutAction.jsp'
+}
+
 function new_form_btn(){
     newScheduleSection.style.display="flex"
     newBtn.style.backgroundColor="#38B774"

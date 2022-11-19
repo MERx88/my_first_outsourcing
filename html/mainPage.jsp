@@ -55,7 +55,7 @@
             </ul>
         </li>
         </ul>
-        <button id="logoutBtn">LOGOUT</button>
+        <button id="logoutBtn" onclick="logout_btn()">LOGOUT</button>
     </section>
 
     <main>
