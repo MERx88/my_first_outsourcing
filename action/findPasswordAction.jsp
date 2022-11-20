@@ -42,7 +42,6 @@
             member.add(quotes+result.getString(4)+quotes);
             member.add(quotes+result.getString(5)+quotes);
             member.add(quotes+result.getString(6)+quotes);
-            member.add(quotes+result.getString(7)+quotes);
             memberList.add(member);
     }
 %>
@@ -64,8 +63,8 @@
         var j
 
         for(var i=0; i<memberListSize; i++){
-            if(idValue==memberList[i][1] && nameValue==memberList[i][3] && contactValue==memberList[i][4]){
-                alert(memberList[i][3]+"님의 비밀번호는 "+memberList[i][2]+"입니다")
+            if(idValue==memberList[i][0] && nameValue==memberList[i][2] && contactValue==memberList[i][3]){
+                alert(memberList[i][2]+"님의 비밀번호는 "+memberList[i][1]+"입니다")
                 j=1
                 location.href="../html/loginPage.jsp"
             }

@@ -1,8 +1,4 @@
 
-
-
-
-
 function login_check(){
     var idValue= document.getElementById("idInsert").value
     var pwValue=document.getElementById("pwInsert").value

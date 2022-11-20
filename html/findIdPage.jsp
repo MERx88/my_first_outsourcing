@@ -15,7 +15,7 @@
     <main>
         <h1 id="title">FIND ID</h1>
 
-        <form action="../action/findIdPage.jsp" id="findIdForm" onsubmit="return find_id_check()">
+        <form action="../action/findIdAction.jsp" id="findIdForm" onsubmit="return find_id_check()">
             <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME">
             <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P">
             <section id="btnSection">
@@ -25,6 +25,6 @@
         </form>
     </main>
 
-    <script src="../js/findIdPage.js" > </script>
+    <script src="../js/findIdPage.js" ></script>
 </body>
 </html>

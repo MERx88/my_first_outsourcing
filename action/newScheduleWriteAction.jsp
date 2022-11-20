@@ -28,7 +28,7 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/web","start","1234");
     //sql문 준비
-    String sql ="INSERT INTO schedule(member_id, schedule_date, schedule_time, schedule_content,date) VALUES(?,?,?,?,now());";
+    String sql ="INSERT INTO schedule(id, schedule_date, schedule_time, schedule_content,date) VALUES(?,?,?,?,now());";
     PreparedStatement query = connect.prepareStatement(sql);
     query.setString(1, sessionIdValue);
     query.setString(2, newScheduleDateValue);

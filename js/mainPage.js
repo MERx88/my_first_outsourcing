@@ -1,8 +1,30 @@
 
+var sessionIdValue=<%=sessionIdValue%>;
+var memberListSize=<%=memberList.size()%>;
+var memberList = <%=memberList%>;
+
+var idText=document.getElementById("idText")
+idText.innerHTML=sessionIdValue
+
+for(var i = 0; i < memberListSize; i++){
+    
+}
+
+
+
+
+
+
+
+
+
+
+//======Schedule part=====//
 
 // var idSession=<%=session.getAttribute("idSession")%>;
 // var idText=document.getElementById("idText")
 // idText.innerHTML=idSession
+
 
 var monthsText=["January","February","March","April","May","June","July","August","September","October","November","December"]
 var date = new Date()

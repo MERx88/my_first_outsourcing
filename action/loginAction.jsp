@@ -49,19 +49,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>idCheckAction</title>
+    <title>loginAction</title>
 </head>
 
 <body>
-    <script type="text/javascript">
+    <script>
         var i= <%=i%>;
-        
+    
         if(i==0){
             alert("로그인 정보를 다시 확인해주세요")
             location.href="../html/loginPage.jsp "
         }
         else{
-            console.log(i)
             location.href="../html/mainPage.jsp "
         }
 
