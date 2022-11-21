@@ -255,15 +255,27 @@
         // if((date.getMonth()+1)==)
             for(var j = 0; j < scheduleListSize; j++){
                 if(memberValue==scheduleList[j][1]){
-                    if(scheduleList[j][2].slice(5,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
-                    var scheduleDetail=document.createElement("div")
-                    scheduleDetail.id="scheduleDetailId_"+(j)
-                    scheduleDetail.className="detail"
-                    scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
-                    document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                    if(document.getElementById("dayDetailId"+(idx)).childElementCount<2){
+                        if(scheduleList[j][2].slice(5,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                        var scheduleDetail=document.createElement("div")
+                        scheduleDetail.id="scheduleDetailId_"+(j)
+                        scheduleDetail.className="detail"
+                        scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                        document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                        }else{
+                            if(scheduleList[j][2].slice(6,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                                if(document.getElementById("dayDetailId"+(idx)).childElementCount<2){
+                                var scheduleDetail=document.createElement("div")
+                                scheduleDetail.id="scheduleDetailId_"+(j)
+                                scheduleDetail.className="detail"
+                                scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                                document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                                }
+                            }
+                        }
+                    }
                 }
             }
-        }
         
     }
 
@@ -311,12 +323,24 @@
 
             for(var j = 0; j < scheduleListSize; j++){
                 if(memberValue==scheduleList[j][1]){
-                    if(scheduleList[j][2].slice(5,7)==(monthNow+1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
-                        var scheduleDetail=document.createElement("div")
-                        scheduleDetail.id="scheduleDetailId_"+(j)
-                        scheduleDetail.className="detail"
-                        scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
-                        document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                    if(document.getElementById("dayDetailId"+(idx)).childElementCount<2){
+                        if(scheduleList[j][2].slice(5,7)==(monthNow+1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                            var scheduleDetail=document.createElement("div")
+                            scheduleDetail.id="scheduleDetailId_"+(j)
+                            scheduleDetail.className="detail"
+                            scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                            document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                        }else{
+                            if(scheduleList[j][2].slice(6,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                                if(document.getElementById("dayDetailId"+(idx)).childElementCount<2){
+                                var scheduleDetail=document.createElement("div")
+                                scheduleDetail.id="scheduleDetailId_"+(j)
+                                scheduleDetail.className="detail"
+                                scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                                document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -369,12 +393,24 @@
 
             for(var j = 0; j < scheduleListSize; j++){
                 if(memberValue==scheduleList[j][1]){
-                    if(scheduleList[j][2].slice(5,7)==(monthNow+1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
-                        var scheduleDetail=document.createElement("div")
-                        scheduleDetail.id="scheduleDetailId_"+(j)
-                        scheduleDetail.className="detail"
-                        scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
-                        document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                    if(document.getElementById("dayDetailId"+(idx)).childElementCount<2){
+                        if(scheduleList[j][2].slice(5,7)==(monthNow+1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                            var scheduleDetail=document.createElement("div")
+                            scheduleDetail.id="scheduleDetailId_"+(j)
+                            scheduleDetail.className="detail"
+                            scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                            document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                        }else{
+                            if(scheduleList[j][2].slice(6,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                                if(document.getElementById("dayDetailId"+(idx)).childElementCount<2){
+                                var scheduleDetail=document.createElement("div")
+                                scheduleDetail.id="scheduleDetailId_"+(j)
+                                scheduleDetail.className="detail"
+                                scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                                document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                                }
+                            }
+                        }
                     }
                 }
             }

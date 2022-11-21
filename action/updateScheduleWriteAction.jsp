@@ -20,20 +20,20 @@
     request.setCharacterEncoding("utf-8");
     //전페이지 값저장
     String sessionIdValue=(String)session.getAttribute("idSession");
-    String newScheduleDateValue = request.getParameter("newScheduleDateValue");
-    String newScheduleTimeValue = request.getParameter("newScheduleTimeValue");
-    String newContentValue = request.getParameter("newContentValue");
+    String updateScheduleDateValue = request.getParameter("updateScheduleDateValue");
+    String updateScheduleTimeValue = request.getParameter("updateScheduleTimeValue");
+    String updateContentValue = request.getParameter("updateContentValue");
     
     //데이터베이스 연결
     Class.forName("com.mysql.jdbc.Driver");
     Connection connect=DriverManager.getConnection("jdbc:mysql://localhost:3306/web","start","1234");
     //sql문 준비
-    String sql ="UPDATE schedule SET schedule_date=?, schedule_time=?, schedule_content=? WHERE post_id=?;";
+    String sql ="UPDATE schedule SET schedule_date=?, schedule_time=?, schedule_content=? WHERE id=?;";
     PreparedStatement query = connect.prepareStatement(sql);
-    query.setString(1, schedule_date);
-    query.setString(2, schedule_time);
-    query.setString(3, schedule_content);
-    query.setString(4, newContentValue);
+    query.setString(1, updateScheduleDateValue);
+    query.setString(2, updateScheduleTimeValue);
+    query.setString(3, updateContentValue);
+    query.setString(4, sessionIdValue);
     //sql문 전송
     query.executeUpdate();
     
@@ -43,7 +43,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>newScheduleWriteAction</title>
+    <title>updateScheduleWriteAction</title>
 </head>
 <body>
 
