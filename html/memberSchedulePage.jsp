@@ -86,7 +86,7 @@
     
     <input id="sideMenu" type="checkbox">
     <section id="sidebarList">
-        <button id="myScheduleBtn" onclick="my_schedule_btn()">My Schedule</button>
+        <button id="myScheduleBtnMember" onclick="my_schedule_btn()">My Schedule</button>
         <ul id="departmentList">DEPARTMENT -----------
         <li class="department">
             <p>
@@ -136,7 +136,7 @@
                 <table id="dayScheduleList">
                     <!-- 동적생성 -->
                 </table>
-                <button id="newBtn" onclick="new_form_btn()">+</button>
+                <!-- <button id="newBtn" onclick="new_form_btn()">+</button> -->
             </div>
         </section>
 
@@ -404,64 +404,25 @@
         }
 
         for(var j = 0; j < scheduleListSize; j++){
-
-            if(scheduleList[j][2].slice(5,7)==(monthNow + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
-                var dayScheduleRow=document.createElement("tr")
-                dayScheduleRow.id="dayScheduleRow"+(j)
-                dayScheduleRow.className="dayScheduleRowClass"
-                document.getElementById("dayScheduleList").appendChild(dayScheduleRow)
-            
-                var dayScheduleDetail=document.createElement("td")
-                dayScheduleDetail.id="dayScheduleDetail"+(j)
-                dayScheduleDetail.className="dayScheduleDetailClass"
-                dayScheduleDetail.innerHTML= scheduleList[j][3].slice(0,5)+"<br>"+scheduleList[j][4]
-                document.getElementById("dayScheduleRow"+(j)).appendChild(dayScheduleDetail)
-            
-                var switchBtnSection=document.createElement("td")
-                switchBtnSection.id="switchBtnSection"+(j)
-                switchBtnSection.className="switchBtnSectionClass"
-                document.getElementById("dayScheduleRow"+(j)).appendChild(switchBtnSection)
-
-                var updateBtn=document.createElement("button")
-                updateBtn.id="updateBtn"+(j)
-                updateBtn.className="updateBtnClass"
-                updateBtn.setAttribute('onclick',`update_form_btn()`)
-                document.getElementById("switchBtnSection"+(j)).appendChild(updateBtn)
+            if(memberValue==scheduleList[j][1]){
+                if(scheduleList[j][2].slice(5,7)==(monthNow + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                    var dayScheduleRow=document.createElement("tr")
+                    dayScheduleRow.id="dayScheduleRow"+(j)
+                    dayScheduleRow.className="dayScheduleRowClass"
+                    document.getElementById("dayScheduleList").appendChild(dayScheduleRow)
                 
-                var updateBtnImg=document.createElement("img")
-                updateBtnImg.className="switchBtnImg"
-                updateBtnImg.setAttribute('src',"../image/update.png")
-                document.getElementById("updateBtn"+(j)).appendChild(updateBtnImg)
-
-                var deleteBtn=document.createElement("button")
-                deleteBtn.id="deleteBtn"+(j)
-                deleteBtn.className="deleteBtnClass"
-                deleteBtn.setAttribute('onclick',`"delete_btn()`)
-                document.getElementById("switchBtnSection"+(j)).appendChild(deleteBtn)
-
-                var deleteBtnImg=document.createElement("img")
-                deleteBtnImg.className="switchBtnImg"
-                deleteBtnImg.setAttribute('src',"../image/delete.png")
-                document.getElementById("deleteBtn"+(j)).appendChild(deleteBtnImg)
+                    var dayScheduleDetail=document.createElement("td")
+                    dayScheduleDetail.id="dayScheduleDetail"+(j)
+                    dayScheduleDetail.className="dayScheduleDetailClass"
+                    dayScheduleDetail.innerHTML= scheduleList[j][3].slice(0,5)+"<br>"+scheduleList[j][4]
+                    document.getElementById("dayScheduleRow"+(j)).appendChild(dayScheduleDetail)
+                
+                }
             }
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //==========기타 버튼==========//
 
     function show_sidebar(){
         sidebarList.style.display="flex"
@@ -476,56 +437,8 @@
         location.href='../action/logoutAction.jsp'
     }
 
-    function new_form_btn(){
-        newScheduleSection.style.display="flex"
-        newBtn.style.backgroundColor="#38B774"
-    }
+    //==========새로운 스케쥴 추가==========//
 
-    function update_form_btn(){
-        updateScheduleSection.style.display="flex"
-        // updateBtn1.style.backgroundColor="#38B774"
-    }
-
-    function delete_btn(){
-    
-    }
-
-    function new_back_btn(){
-        newScheduleSection.style.display="none"
-        newBtn.style.backgroundColor="#293E98"
-    }
-
-    function update_back_btn(){
-        updateScheduleSection.style.display="none"
-        updateBtn1.style.backgroundColor="#4668ff"
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //새로운 스케쥴 추가
     function new_schedule_write_check(){
         var newScheduleDateValue= document.getElementById("newScheduleDateInsert").value
         var newScheduleTimeValue=document.getElementById("newScheduleTimeInsert").value
@@ -544,7 +457,9 @@
             return false;
         }
     }
-        //스케쥴 수정
+
+    //==========스케쥴 수정==========//
+
     function update_schedule_write_check(){
         var updateScheduleDateValue= document.getElementById("updateScheduleDateInsert").value
         var updateScheduleTimeValue=document.getElementById("updateScheduleTimeInsert").value

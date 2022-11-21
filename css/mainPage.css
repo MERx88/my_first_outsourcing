@@ -113,6 +113,22 @@ main{
     border: none;
 }
 
+#myScheduleBtnMember{
+    width: 80%;
+    height: 50px;
+    margin-top: 100px;
+    background-color: #A3A3A3;
+    color:#FFFFFF;
+    font-size: 23px;
+    font-weight: 500;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    border: none;
+}
+
 #departmentList{
     width: 100%;
     font-size: 20px;
@@ -144,11 +160,15 @@ main{
     color: #000;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
-
 #sidebarList ul ul li{
+    width: 100%;   
     padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #sidebarList ul > li:hover > ul {
@@ -160,7 +180,7 @@ main{
     height: 50px;
     font-size: 20px;
     font-weight: 500;
-    background-color: #3A5CAA;
+    background-color: #5175c9;
     color:#FFFFFF;
     border-radius: 35px;
     display: flex;
@@ -171,7 +191,7 @@ main{
 #logoutBtn{
     width: 80%;
     height: 50px;
-    margin-top: 450px;
+    margin-top: 850px;
     background-color: #686868;
     color:#FFFFFF;
     font-size: 23px;
@@ -182,13 +202,20 @@ main{
     justify-content: center;
     cursor:pointer;
     border: none;
+    position: absolute;
 }
 
-
-
-/* #sidebarList > ul > li:hover{
+#sidebarList p:hover{
     background-color: #293E98;
-} */
+}
+
+#sidebarList ul li ul li:hover{
+    background-color: #A3A3A3;
+}
+
+#logoutBtn:hover{
+    background-color: #f35e5e;
+}
 
 /* ==========Month============ */
 

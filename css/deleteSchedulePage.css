@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F3F6FB;
+}
+
+form{
+    width: 100%;
+    height:100%;
+    margin-top: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#checkText{
+    font-size: 25px;
+    font-weight: 600;
+    color: #293E98;
+}
+
+#btnSection{
+    width: 50%;
+    height:30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn{
+    width: 40%;
+    height:40%;
+    background-color:#D1DEF2;
+    cursor:pointer;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #293E98;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    background-color:#D3D3D3;
+}

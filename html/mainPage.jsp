@@ -177,13 +177,8 @@
         </section>
 
     </main>
-    
-
-
-
 
     <script>
-    
     var sessionIdValue=<%=sessionIdValue%>;
     var memberListSize=<%=memberList.size()%>;
     var memberList = <%=memberList%>;
@@ -404,62 +399,56 @@
         for(var j = 0; j < scheduleListSize; j++){
 
             if(scheduleList[j][2].slice(5,7)==(monthNow + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
-                var dayScheduleRow=document.createElement("tr")
-                dayScheduleRow.id="dayScheduleRow"+(j)
-                dayScheduleRow.className="dayScheduleRowClass"
-                document.getElementById("dayScheduleList").appendChild(dayScheduleRow)
-            
-                var dayScheduleDetail=document.createElement("td")
-                dayScheduleDetail.id="dayScheduleDetail"+(j)
-                dayScheduleDetail.className="dayScheduleDetailClass"
-                dayScheduleDetail.innerHTML= scheduleList[j][3].slice(0,5)+"<br>"+scheduleList[j][4]
-                document.getElementById("dayScheduleRow"+(j)).appendChild(dayScheduleDetail)
-            
-                var switchBtnSection=document.createElement("td")
-                switchBtnSection.id="switchBtnSection"+(j)
-                switchBtnSection.className="switchBtnSectionClass"
-                document.getElementById("dayScheduleRow"+(j)).appendChild(switchBtnSection)
-
-                var updateBtn=document.createElement("button")
-                updateBtn.id="updateBtn"+(j)
-                updateBtn.className="updateBtnClass"
-                updateBtn.setAttribute('onclick',`update_form_btn()`)
-                document.getElementById("switchBtnSection"+(j)).appendChild(updateBtn)
+                if(sessionIdValue==scheduleList[j][1]){    
+                    var dayScheduleRow=document.createElement("tr")
+                    dayScheduleRow.id="dayScheduleRow"+(j)
+                    dayScheduleRow.className="dayScheduleRowClass"
+                    document.getElementById("dayScheduleList").appendChild(dayScheduleRow)
                 
-                var updateBtnImg=document.createElement("img")
-                updateBtnImg.className="switchBtnImg"
-                updateBtnImg.setAttribute('src',"../image/update.png")
-                document.getElementById("updateBtn"+(j)).appendChild(updateBtnImg)
+                    var dayScheduleDetail=document.createElement("td")
+                    dayScheduleDetail.id="dayScheduleDetail"+(j)
+                    dayScheduleDetail.className="dayScheduleDetailClass"
+                    dayScheduleDetail.innerHTML= scheduleList[j][3].slice(0,5)+"<br>"+scheduleList[j][4]
+                    document.getElementById("dayScheduleRow"+(j)).appendChild(dayScheduleDetail)
+                
+                    var switchBtnSection=document.createElement("td")
+                    switchBtnSection.id="switchBtnSection"+(j)
+                    switchBtnSection.className="switchBtnSectionClass"
+                    document.getElementById("dayScheduleRow"+(j)).appendChild(switchBtnSection)
 
-                var deleteBtn=document.createElement("button")
-                deleteBtn.id="deleteBtn"+(j)
-                deleteBtn.className="deleteBtnClass"
-                deleteBtn.setAttribute('onclick',`"delete_btn()`)
-                document.getElementById("switchBtnSection"+(j)).appendChild(deleteBtn)
+                    var updateBtn=document.createElement("button")
+                    updateBtn.id="updateBtn"+(j)
+                    updateBtn.className="updateBtnClass"
+                    updateBtn.setAttribute('onclick',`update_form_btn()`)
+                    document.getElementById("switchBtnSection"+(j)).appendChild(updateBtn)
+                    
+                    var updateBtnImg=document.createElement("img")
+                    updateBtnImg.className="switchBtnImg"
+                    updateBtnImg.setAttribute('src',"../image/update.png")
+                    document.getElementById("updateBtn"+(j)).appendChild(updateBtnImg)
 
-                var deleteBtnImg=document.createElement("img")
-                deleteBtnImg.className="switchBtnImg"
-                deleteBtnImg.setAttribute('src',"../image/delete.png")
-                document.getElementById("deleteBtn"+(j)).appendChild(deleteBtnImg)
+                    var deleteBtn=document.createElement("button")
+                    deleteBtn.id="deleteBtn"+(j)
+                    deleteBtn.className="deleteBtnClass"
+                    deleteBtn.setAttribute('onclick',`delete_btn(`+j+')')
+                    document.getElementById("switchBtnSection"+(j)).appendChild(deleteBtn)
+
+                    var deleteBtnImg=document.createElement("img")
+                    deleteBtnImg.className="switchBtnImg"
+                    deleteBtnImg.setAttribute('src',"../image/delete.png")
+                    document.getElementById("deleteBtn"+(j)).appendChild(deleteBtnImg)
+
+    //              <form action="../action/postDeleteAction.jsp"  id="postForm">
+                    //     
+                    //     <input type="hidden" id="postId" name="postid_value" >
+                    //     <input type="submit" value="이 버튼을 부르면 삭제가 완료됩니다" id="submitButton">
+                 // </form>
+                }
             }
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     //==========기타 버튼==========//
 
     function show_sidebar(){
         sidebarList.style.display="flex"
@@ -480,8 +469,9 @@
         // updateBtn1.style.backgroundColor="#38B774"
     }
 
-    function delete_btn(){
-    
+    function delete_btn(j){
+        localStorage.setItem('scheduleValue', scheduleList[j][0])
+        window.open("deleteSchedulePage.jsp", "deleteSchedule", "width=350px, height=250px")
     }
 
     function new_back_btn(){
@@ -494,32 +484,8 @@
         updateBtn1.style.backgroundColor="#4668ff"
     }
 
+    //==========새로운 스케쥴 추가 빈칸 확인==========//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //새로운 스케쥴 추가
     function new_schedule_write_check(){
         var newScheduleDateValue= document.getElementById("newScheduleDateInsert").value
         var newScheduleTimeValue=document.getElementById("newScheduleTimeInsert").value
@@ -538,7 +504,9 @@
             return false;
         }
     }
-        //스케쥴 수정
+
+    //==========스케쥴 수정 빈칸 확인==========//
+
     function update_schedule_write_check(){
         var updateScheduleDateValue= document.getElementById("updateScheduleDateInsert").value
         var updateScheduleTimeValue=document.getElementById("updateScheduleTimeInsert").value
