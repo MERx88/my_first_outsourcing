@@ -201,9 +201,9 @@ main{
 }
 
 #title{
-    width:200px;
+    width:300px;
     height: 20px;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     color:#293E98;
 }
@@ -274,11 +274,14 @@ main{
     margin-left: 15px;
     margin-bottom: 3px;
     font-size: 13px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     background-color: #f1f1f1;
+    /* text-overflow: ellipsis; */
+    /* overflow: hidden; */
 }
 
 #pageBtnSection{
@@ -336,14 +339,14 @@ main{
 
 #dayScheduleList{
     width: 400px;
-    height: 530px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
 }
 
-#dayScheduleRow{
+.dayScheduleRowClass{
     width: 380px;
     height: 100px;
     margin-top: 10px;
@@ -352,10 +355,9 @@ main{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
 }
 
-#dayScheduleDetail{
+.dayScheduleDetailClass{
     width: 80%;
     height: 70px;
     padding-left: 20px;
@@ -364,7 +366,7 @@ main{
     background-color: rgb(255, 255, 255);
 }
 
-#switchBtnSection{
+.switchBtnSectionClass{
     width: 15%;
     height: 100px;
     /* background-color: purple; */
@@ -374,7 +376,8 @@ main{
     justify-content: center;
 }
 
-.switchBtn{
+.updateBtnClass{
+    background-color: #4668ff;
     margin:3px;
     width: 45px;
     height: 45px;
@@ -387,12 +390,18 @@ main{
     cursor:pointer;
 }
 
-#updateBtn{
-    background-color: #4668ff;
-}
-
-#deleteBtn{
+.deleteBtnClass{
     background-color: #f35e5e;
+    margin:3px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    outline:none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
 }
 
 .switchBtnImg{
@@ -403,8 +412,8 @@ main{
 #newBtn{
     width: 200px;
     height: 30px;
-    margin-top: 10px;
-    margin-left: 85px;
+    margin-top: 30px;
+    margin-left: 100px;
     background-color: #293E98;
     color:#FFFFFF;
     font-size: 23px;

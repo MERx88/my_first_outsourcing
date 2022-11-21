@@ -86,7 +86,7 @@
     
     <input id="sideMenu" type="checkbox">
     <section id="sidebarList">
-        <button id="myScheduleBtn">My Schedule</button>
+        <button id="myScheduleBtn" onclick="my_schedule_btn()">My Schedule</button>
         <ul id="departmentList">DEPARTMENT -----------
         <li class="department">
             <p>
@@ -111,7 +111,7 @@
         <!-- MONTH schedule -->
 
         <section id="monthScheduleSection">
-            <h1 id="title">My Schedule</h1>
+            <h1 id="title"></h1>
             <div id="monthSchedule">
                 <h2 id="month"><!-- 동적생성 --></h2>
                 <table id="monthScheduleList">
@@ -189,11 +189,14 @@
     var memberList = <%=memberList%>;
     var scheduleListSize=<%=scheduleList.size()%>;
     var scheduleList = <%=scheduleList%>;
+    var memberValue=localStorage.getItem('memberValue')
     
     //자신의 닉네임 상단에 띄우기
     var idText=document.getElementById("idText")
     idText.innerHTML=sessionIdValue
-    console.log(scheduleList[0][2].slice(5,7))
+
+    var titleText=document.getElementById("title")
+    titleText.innerHTML=memberValue+" Schedule"
 
     //부서 클릭시 부서 해당멤버 보여주기
     for(var i = 0; i < memberListSize; i++){
@@ -216,7 +219,7 @@
 
     function show_member_schedule(i){
         localStorage.setItem('memberValue', memberList[i][0])
-        window.open(`memberSchedulePage.jsp`,`_self`)
+        location.replace(location.href)
     }
 
     //======Schedule part=====//
@@ -250,16 +253,16 @@
         document.getElementById("monthScheduleRow"+(idx)).appendChild(dayDetail)
 
         // if((date.getMonth()+1)==)
-        for(var j = 0; j < scheduleListSize; j++){
-            if(sessionIdValue==scheduleList[j][1]){
-                if(scheduleList[j][2].slice(5,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
-                var scheduleDetail=document.createElement("div")
-                scheduleDetail.id="scheduleDetailId_"+(j)
-                scheduleDetail.className="detail"
-                scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
-                document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+            for(var j = 0; j < scheduleListSize; j++){
+                if(memberValue==scheduleList[j][1]){
+                    if(scheduleList[j][2].slice(5,7)==(date.getMonth() + 1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
+                    var scheduleDetail=document.createElement("div")
+                    scheduleDetail.id="scheduleDetailId_"+(j)
+                    scheduleDetail.className="detail"
+                    scheduleDetail.innerHTML=scheduleList[j][3].slice(0,5)+"  "+scheduleList[j][4]
+                    document.getElementById("dayDetailId"+(idx)).appendChild(scheduleDetail)
+                }
             }
-        }
         }
         
     }
@@ -306,9 +309,8 @@
             dayDetail.className="dayDetail"
             document.getElementById("monthScheduleRow"+(idx)).appendChild(dayDetail)
 
-
             for(var j = 0; j < scheduleListSize; j++){
-                if(sessionIdValue==scheduleList[j][1]){
+                if(memberValue==scheduleList[j][1]){
                     if(scheduleList[j][2].slice(5,7)==(monthNow+1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
                         var scheduleDetail=document.createElement("div")
                         scheduleDetail.id="scheduleDetailId_"+(j)
@@ -366,7 +368,7 @@
             document.getElementById("monthScheduleRow"+(idx)).appendChild(dayDetail)
 
             for(var j = 0; j < scheduleListSize; j++){
-                if(sessionIdValue==scheduleList[j][1]){    
+                if(memberValue==scheduleList[j][1]){
                     if(scheduleList[j][2].slice(5,7)==(monthNow+1) && scheduleList[j][2].slice(8,10)==(idx + 1)){
                         var scheduleDetail=document.createElement("div")
                         scheduleDetail.id="scheduleDetailId_"+(j)
@@ -464,6 +466,10 @@
     function show_sidebar(){
         sidebarList.style.display="flex"
         sidebar.style.backgroundColor="#D1DEF2"  
+    }
+
+    function my_schedule_btn(){
+        location.href='mainPage.jsp'
     }
 
     function logout_btn(){

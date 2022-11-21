@@ -36,7 +36,6 @@
             member.add(quotes+result.getString(4)+quotes);
             member.add(quotes+result.getString(5)+quotes);
             member.add(quotes+result.getString(6)+quotes);
-            member.add(quotes+result.getString(7)+quotes);
             memberList.add(member);
     }
 %>
@@ -56,7 +55,7 @@
         var j
         
         for(var i=0; i<memberListSize; i++){
-            if(idValue==memberList[i][1]){
+            if(idValue==memberList[i][0]){
                 j=1
                 alert("아이디 중복")
             }
