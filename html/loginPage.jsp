@@ -16,8 +16,8 @@
         <h1 id="title">LOG IN</h1>
         <div id="loginContainer">
             <form action="../action/loginAction.jsp" id="loginForm" onsubmit="return login_check()">
-                <input type="text" id="idInsert" name="idValue" class="insert" placeholder="ID">
-                <input type="password" id="pwInsert" name="pwValue" class="insert" placeholder="PASSWORD">
+                <input type="text" id="idInsert" name="idValue" class="insert" placeholder="ID" maxlength="20">
+                <input type="password" id="pwInsert" name="pwValue" class="insert" placeholder="PASSWORD" maxlength="20">
                 <input type="submit" id="loginBtn" class="formBtn" value="LOGIN">
             </form>
             <section id="extraLinkContainer">

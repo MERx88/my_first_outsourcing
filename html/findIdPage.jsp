@@ -16,8 +16,8 @@
         <h1 id="title">FIND ID</h1>
 
         <form action="../action/findIdAction.jsp" id="findIdForm" onsubmit="return find_id_check()">
-            <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME">
-            <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P">
+            <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME" maxlength="20">
+            <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P" maxlength="20">
             <section id="btnSection">
                 <input type="button" id="backLoginFormBtn" class="backBtn" value="<Login" onclick="go_login()">
                 <input type="submit" id="findIdBtn" class="formBtn" value="FIND ID">

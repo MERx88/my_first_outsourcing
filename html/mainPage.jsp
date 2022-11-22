@@ -152,7 +152,7 @@
                 <form id="newScheduleForm" action="../action/newScheduleWriteAction.jsp" onsubmit="return new_schedule_write_check()">
                     <input type="date" id="newScheduleDateInsert" name="newScheduleDateValue" class="insert">
                     <input type="time" id="newScheduleTimeInsert" name="newScheduleTimeValue" class="insert">
-                    <textarea id="newContentInsert" name="newContentValue" maxlength="2048"></textarea>
+                    <textarea id="newContentInsert" name="newContentValue" maxlength="100"></textarea>
                     <input type="submit" value="SUBMIT" id="submitFormBtn" class="formBtn">
                 </form>
             </div>
@@ -170,7 +170,7 @@
                 <form id="updateScheduleForm" action="../action/updateScheduleWriteAction.jsp" onsubmit="return update_schedule_write_check()">
                     <input type="date" id="updateScheduleDateInsert" name="updateScheduleDateValue" class="insert">
                     <input type="time" id="updateScheduleTimeInsert" name="updateScheduleTimeValue" class="insert">
-                    <textarea id="updateContentInsert" name="updateContentValue" maxlength="2048"></textarea>
+                    <textarea id="updateContentInsert" name="updateContentValue" maxlength="100"></textarea>
                     <input type="submit" value="UPDATE" id="updateFormBtn" class="formBtn">
                 </form>
             </div>
@@ -187,6 +187,9 @@
     var memberList = <%=memberList%>;
     var scheduleListSize=<%=scheduleList.size()%>;
     var scheduleList = <%=scheduleList%>;
+
+    var dayNumList=document.getElementsByClassName("dayNum")
+    var dayDetailList=document.getElementsByClassName("dayDetail")
     
     //자신의 닉네임 상단에 띄우기
     var idText=document.getElementById("idText")
@@ -425,8 +428,14 @@
     function show_day_schedule(idx){
 
         dayScheduleSection.style.display="flex"
-        // dayNumId+(idx).style.backgroundColor="#D1DEF2"
-        // dayDetailId+(idx).style.backgroundColor="#D1DEF2"
+
+        for(var j = 0; j < daysNow; j++){
+            dayNumList[j].style.backgroundColor="#D3D3D3"
+            dayDetailList[j].style.backgroundColor="#D3D3D3"
+        }
+
+        dayNumList[idx].style.backgroundColor="#D1DEF2"
+        dayDetailList[idx].style.backgroundColor="#D1DEF2"
 
         var dayText=document.getElementById("day")
         dayText.innerHTML="DAY "+(idx+1)
@@ -446,7 +455,7 @@
                     dayScheduleRow.id="dayScheduleRow"+(j)
                     dayScheduleRow.className="dayScheduleRowClass"
                     document.getElementById("dayScheduleList").appendChild(dayScheduleRow)
-                
+                    
                     var dayScheduleDetail=document.createElement("td")
                     dayScheduleDetail.id="dayScheduleDetail"+(j)
                     dayScheduleDetail.className="dayScheduleDetailClass"
@@ -479,25 +488,12 @@
                     deleteBtnImg.className="switchBtnImg"
                     deleteBtnImg.setAttribute('src',"../image/delete.png")
                     document.getElementById("deleteBtn"+(j)).appendChild(deleteBtnImg)
-
-    //              <form action="../action/postDeleteAction.jsp"  id="postForm">
-                    //     
-                    //     <input type="hidden" id="postId" name="postid_value" >
-                    //     <input type="submit" value="이 버튼을 부르면 삭제가 완료됩니다" id="submitButton">
-                 // </form>
                 }
             }
         }
     }
 
      //==========기타 버튼==========//
-
-    // if (matchMedia("screen and (max-width: 360px)").matches) {
-
-    // // 1024px 이상에서 사용할 스크립트
-    // } else {
-    // // 1024px 미만에서 사용할 스크립트
-    // }
 
     function show_sidebar(){
         sidebarList.style.display="flex"
@@ -525,6 +521,11 @@
 
     function day_back_btn(){
         dayScheduleSection.style.display="none"
+
+        for(var j = 0; j < daysNow; j++){
+            dayNumList[j].style.backgroundColor="#D3D3D3"
+            dayDetailList[j].style.backgroundColor="#D3D3D3"
+        }
         // newBtn.style.backgroundColor="#293E98"
     }
 
@@ -579,6 +580,27 @@
             return false;
         }
     }
+
+    // dayDetailList[j].style.backgroundColor="#D3D3D3"
+
+    // window.addEventListener("resize", function() {
+    //     if (matchMedia("screen and (max-width: 360px)").matches) {
+    //     if(newScheduleSection.style.display=="flex" || updateScheduleSection.style.display=="flex"){
+    //         dayScheduleSection.style.display="none"
+    //         monthScheduleSection.style.display="none"
+    //         newSchedule.style.width="300px"
+    //         updateSchedule.style.width="300px"
+    //     }
+    //     if(dayScheduleSection.style.display=="flex"){
+    //         monthScheduleSection.style.display="none"
+    //         daySchedule.style.width="300px"
+    //         dayScheduleList.style.width="300px"
+    //         dayScheduleRowClass.style.width="100px"
+    //     }
+    // } else {
+    // // 1024px 미만에서 사용할 스크립트
+    // }
+    // })
     </script>
 </body>
 </html>

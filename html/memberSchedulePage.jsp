@@ -138,6 +138,9 @@
                 </table>
                 <!-- <button id="newBtn" onclick="new_form_btn()">+</button> -->
             </div>
+            <button onclick="day_back_btn()" class="backBtn">
+                <img src="../image/left-arrow.png"  class="backBtnImg">
+            </button>
         </section>
 
         <!-- New Schedule< section -->
@@ -190,6 +193,9 @@
     var scheduleListSize=<%=scheduleList.size()%>;
     var scheduleList = <%=scheduleList%>;
     var memberValue=localStorage.getItem('memberValue')
+
+    var dayNumList=document.getElementsByClassName("dayNum")
+    var dayDetailList=document.getElementsByClassName("dayDetail")
     
     //자신의 닉네임 상단에 띄우기
     var idText=document.getElementById("idText")
@@ -426,8 +432,15 @@
     function show_day_schedule(idx){
 
         dayScheduleSection.style.display="flex"
-        // dayNumId+(idx).style.backgroundColor="#D1DEF2"
-        // dayDetailId+(idx).style.backgroundColor="#D1DEF2"
+        
+        for(var j = 0; j < daysNow; j++){
+            dayNumList[j].style.backgroundColor="#D3D3D3"
+            dayDetailList[j].style.backgroundColor="#D3D3D3"
+        }
+
+        dayNumList[idx].style.backgroundColor="#D1DEF2"
+        dayDetailList[idx].style.backgroundColor="#D1DEF2"
+
 
         var dayText=document.getElementById("day")
         dayText.innerHTML="DAY "+(idx+1)
@@ -472,6 +485,15 @@
     function logout_btn(){
         location.href='../action/logoutAction.jsp'
     }
+
+    function day_back_btn(){
+        dayScheduleSection.style.display="none"
+        for(var j = 0; j < daysNow; j++){
+            dayNumList[j].style.backgroundColor="#D3D3D3"
+            dayDetailList[j].style.backgroundColor="#D3D3D3"
+        }
+    }
+
 
     //==========새로운 스케쥴 추가==========//
 

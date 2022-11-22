@@ -16,23 +16,23 @@
         <h1 id="title">SIGN UP</h1>
         <form action="../action/signupAction.jsp" onsubmit="return signup_check()" id="signupForm">
             <section id="idSection">
-                <input type="text" id="idInsert" name="idValue" placeholder="ID">
+                <input type="text" id="idInsert" name="idValue" placeholder="ID" maxlength="20">
                 <input type="button" id="idCheckBtn" onclick="id_check()" value="아이디중복">
                 <input type="hidden" id="idCheckHidden" name="idCheckHiddenValue" value="0">
             </section>
             
             <section id="pwSection" class="passwordSection">
-                <input type="password" id="pwInsert" name="pwValue" class="passwordInsert" placeholder="PASSWORD">
+                <input type="password" id="pwInsert" name="pwValue" class="passwordInsert" placeholder="PASSWORD" maxlength="20">
                 <i class="pwViewkBtn" onclick="pw_view_check(0)"><img src="../image/view.png" class="viewImg"></i>
             </section>
             
             <section id="pwCheckSection" class="passwordSection">
-                <input type="password" id="pwCheckInsert" name="pwCheckValue" class="passwordInsert" placeholder="PASSWORD CHECK">
+                <input type="password" id="pwCheckInsert" name="pwCheckValue" class="passwordInsert" placeholder="PASSWORD CHECK" maxlength="20">
                 <i class="pwViewkBtn" onclick="pw_view_check(1)"><img src="../image/view.png" class="viewImg"></i>
             </section>
             
-            <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME">
-            <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P">
+            <input type="text" id="nameInsert" name="nameValue" class="insert" placeholder="NAME" maxlength="20">
+            <input type="text" id="contactInsert" name="contactValue" class="insert" placeholder="H.P" maxlength="20">
 
             <select id="departmentInsert" name="departmentValue">
                 <option disabled selected value="">DEPARTMENT</option>

@@ -295,20 +295,19 @@ main{
 }
 
 .detail{
-    width:170px;
+    width:150px;
     height: 15px;
     margin-top: 3px;
     margin-left: 15px;
     margin-bottom: 3px;
+    padding-left: 8%;
     font-size: 13px;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
     background-color: #f1f1f1;
-    /* text-overflow: ellipsis; */
-    /* overflow: hidden; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 #pageBtnSection{
@@ -388,10 +387,12 @@ main{
 .dayScheduleDetailClass{
     width: 80%;
     height: 70px;
-    padding-left: 20px;
-    padding-top: 30px;
+    padding: 15px;
+    font-size: 15px;
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
+    display: inline-block;
+    white-space: normal;
 }
 
 .switchBtnSectionClass{
@@ -484,7 +485,7 @@ main{
 }
 
 .insert{
-    width: 388px;
+    width: 95%;
     height: 40px;
     margin-top: 13px;
     padding-left: 5%;
@@ -502,8 +503,9 @@ main{
 }
 
 #newContentInsert{
-    width: 400px;
-    height: 350px;
+    width: 80%;
+    height: 280px;
+    padding: 10%;
     margin-top: 20px;
     border-radius: 25px;
     outline:none;
@@ -515,7 +517,7 @@ main{
 }
 
 .formBtn{
-    width: 400px;
+    width: 90%;
     height: 40px;
     margin-top: 10px;
     background-color: #293E98;
@@ -572,7 +574,7 @@ main{
 }
 
 .insert{
-    width: 388px;
+    width: 95%;
     height: 40px;
     margin-top: 13px;
     padding-left: 5%;
@@ -590,8 +592,9 @@ main{
 }
 
 #updateContentInsert{
-    width: 400px;
-    height: 350px;
+    width: 80%;
+    height: 280px;
+    padding: 10%;
     margin-top: 20px;
     border-radius: 25px;
     outline:none;
